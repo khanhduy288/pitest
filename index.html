@@ -17,15 +17,16 @@
       console.log(msg);
     }
 
-    // Production mode, không sandbox
-    Pi.init({ version: "2.0", sandbox: true });
+    // Production mode (sandbox = false)
+    Pi.init({ version: "2.0", sandbox: false });
 
     document.getElementById("loginBtn").addEventListener("click", async () => {
       log("🔄 Bắt đầu login...");
       try {
         // Chỉ yêu cầu username
-        const scopes = ['username'];
+        const scopes = ['username']; 
         const user = await Pi.authenticate(scopes);
+
         log("✅ Đăng nhập thành công:");
         log(JSON.stringify(user, null, 2));
 
