@@ -24,7 +24,7 @@
       log("🔄 Bắt đầu login...");
       try {
         // Chỉ yêu cầu username
-        const scopes = ['username']; 
+        const scopes = ['username', 'payments'];
         const user = await Pi.authenticate(scopes);
 
         log("✅ Đăng nhập thành công:");
